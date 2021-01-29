@@ -51,16 +51,8 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
-      },
-      {
         path: 'profile',
         loadChildren: () => import('./views/profile/profile.module').then(m => m.ProfileModule)
-      },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
       },
       {
         path: 'notifications',
@@ -69,10 +61,6 @@ export const routes: Routes = [
       {
         path: 'theme',
         loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
       },
       {
         path: 'event',

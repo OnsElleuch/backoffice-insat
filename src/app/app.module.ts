@@ -28,7 +28,6 @@ const APP_CONTAINERS = [
 ];
 
 import {
-  AppAsideModule,
   AppBreadcrumbModule,
   AppHeaderModule,
   AppFooterModule,
@@ -48,7 +47,6 @@ import { ChartsModule } from 'ng2-charts';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AppAsideModule,
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,
     AppHeaderModule,
