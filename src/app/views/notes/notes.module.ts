@@ -12,8 +12,8 @@ import { AddNotesComponent } from './add-notes/add-notes.component';
   imports: [
     CommonModule,
     NotesRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
   ]
 })
 export class NotesModule { }

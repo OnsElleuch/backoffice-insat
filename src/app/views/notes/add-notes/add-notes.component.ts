@@ -18,5 +18,6 @@ export class AddNotesComponent implements OnInit {
 
   onSubmit(formulaire: NgForm){
     this.notesServices.addNotes(formulaire).subscribe(()=>{});
+    formulaire.reset();
   }
 }
