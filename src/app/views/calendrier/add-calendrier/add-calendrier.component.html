@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Ajouter un emploi</strong>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm" enctype="multipart/form-data" class="form-horizontal" >
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name">Nom</label>
+            <div class="col-md-9">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Nom" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="type">Type</label>
+            <div class="col-md-9">
+                <input type="text" id="type" name="type" class="form-control" placeholder="Type" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="date">Date</label>
+            <div class="col-md-9">
+              <input type="date" id="date" name="date" class="form-control" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pdfUrl">Fichier PDF de l'emploi</label>
+            <div class="col-md-9">
+              <input type="file" id="pdfUrl" name="pdfUrl" ngModel>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="onSubmit(formulaire)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </div>
+   
+  </div>
