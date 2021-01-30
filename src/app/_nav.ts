@@ -4,38 +4,17 @@ export const navItems: INavData[] = [
 
   {
     title: true,
-    name: 'Theme'
+    name: 'Actualités'
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
-    icon: 'icon-drop'
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    icon: 'icon-pencil'
-  },
-  {
-    name: 'Notifications',
-    url: '/notifications',
-    icon: 'icon-bell',
+    name: 'Gérer les actualités',
+    url: '/news',
+    icon: 'icon-star',
     children: [
       {
-        name: 'Alerts',
-        url: '/notifications/alerts',
-        icon: 'icon-bell'
+        name: 'Ajouter une actualité',
+        url: '/news/add-news',
       },
-      {
-        name: 'Badges',
-        url: '/notifications/badges',
-        icon: 'icon-bell'
-      },
-      {
-        name: 'Modals',
-        url: '/notifications/modals',
-        icon: 'icon-bell'
-      }
     ]
   },
   {
