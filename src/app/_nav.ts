@@ -22,6 +22,24 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
+    name: 'Emplois de temps'
+  },
+  {
+    name: 'Gérer les emplois',
+    url: '/calendrier',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter un emploi',
+        url: '/calendrier/add-calendrier',
+      },
+    ]
+  },
+  {
+    divider: true
+  },
+  {
+    title: true,
     name: 'Formulaires Club'
   },
   {
