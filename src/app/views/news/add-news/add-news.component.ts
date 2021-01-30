@@ -27,4 +27,8 @@ export class AddNewsComponent implements OnInit {
     formulaire.reset();
   }
 
+  onReset(formulaire: NgForm){
+    formulaire.reset();
+  }
+
 }

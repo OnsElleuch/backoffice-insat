@@ -20,4 +20,9 @@ export class AddNotesComponent implements OnInit {
     this.notesServices.addNotes(formulaire).subscribe(()=>{});
     formulaire.reset();
   }
+
+  onReset(formulaire: NgForm){
+    formulaire.reset();
+  }
+
 }
