@@ -4,7 +4,7 @@
         <strong>Ajouter un événement</strong>
       </div>
       <div class="card-body">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="title">Titre de l'évenement</label>
             <div class="col-md-9">
@@ -27,8 +27,7 @@
             <label class="col-md-3 col-form-label" for="club">Club</label>
             <div class="col-md-9">
                 <select type="text" id="club" name="club" class="form-control" placeholder="club" ngModel>
-                    <option value="classe">Délibération de classe</option>
-                    <option value="individuelle">Délibération individuelle</option>
+                    <option *ngFor="let clubName of clubsNames" value={{clubName}}>{{ clubName }}</option>
                 </select>
             </div>
           </div>
