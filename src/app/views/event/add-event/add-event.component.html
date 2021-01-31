@@ -8,13 +8,13 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="title">Titre de l'évenement</label>
             <div class="col-md-9">
-              <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+              <input type="text" id="title" name="title" class="form-control" placeholder="Titre" ngModel>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="description">Description</label>
             <div class="col-md-9">
-              <textarea id="description" name="description" rows="9" class="form-control" placeholder="Description de l'événement.."></textarea>
+              <textarea id="description" name="description" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
             </div>
           </div>
           <div class="form-group row">
@@ -32,9 +32,15 @@
             </div>
           </div>
           <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="descriptionClub">Description du Club</label>
+            <div class="col-md-9">
+              <textarea id="descriptionClub" name="descriptionClub" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
             <label class="col-md-3 col-form-label" for="photo_url">Photo de l'évenement</label>
             <div class="col-md-9">
-              <input type="file" id="photo_url" name="photo_url">
+              <input type="file" id="photo_url" name="photo_url" ngModel>
             </div>
           </div>
         </form>

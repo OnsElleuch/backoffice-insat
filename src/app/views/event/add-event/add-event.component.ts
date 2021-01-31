@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { ClubService } from "../../../shared/services/club.service";
+import { EventService } from "../../../shared/services/event.service";
 import { filter, map, tap } from 'rxjs/operators';
 import { Club } from "../../../shared/models/club.model";
 
@@ -16,7 +17,8 @@ export class AddEventComponent implements OnInit {
   clubsDescription: string[] = []
 
   constructor(
-    private clubService: ClubService
+    private clubService: ClubService,
+    private eventService: EventService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +37,7 @@ export class AddEventComponent implements OnInit {
   }
 
   onSubmit(formulaire: NgForm){
-    console.log(formulaire.value)
+    this.eventService.addEvent(formulaire).subscribe(()=>{});
     formulaire.reset();
   }
 
