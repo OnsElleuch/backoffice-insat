@@ -54,6 +54,24 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Rendez-Vous'
+  },
+  {
+    name: 'Gérer les Rendez-vous',
+    url: '/rendez-vous',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter un rendez-vous',
+        url: '/rendez-vous/add-rendez-vous',
+      },
+    ]
+  },
+  {
     title: true,
     name: 'Extras',
   },

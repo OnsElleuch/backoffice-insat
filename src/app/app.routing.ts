@@ -70,6 +70,10 @@ export const routes: Routes = [
         path: 'event',
         loadChildren: () => import('./views/event/event.module').then(m => m.EventModule)
       },
+      {
+        path: 'rendez-vous',
+        loadChildren: () => import('./views/rendez-vous/rendez-vous.module').then(m => m.RendezVousModule)
+      },
     ]
   },
   { path: '**', component: P404Component }
