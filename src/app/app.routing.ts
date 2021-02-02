@@ -74,6 +74,18 @@ export const routes: Routes = [
         path: 'rendez-vous',
         loadChildren: () => import('./views/rendez-vous/rendez-vous.module').then(m => m.RendezVousModule)
       },
+      {
+        path: 'direction',
+        loadChildren: () => import('./views/direction/direction.module').then(m=>m.DirectionModule)
+      },
+      {
+        path: 'laboratoire',
+        loadChildren: () => import('./views/laboratoire/laboratoire.module').then(m=>m.LaboratoireModule)
+      },
+      {
+        path: 'enseignant',
+        loadChildren: () => import('./views/enseignant/enseignant.module').then(m=>m.EnseignantModule)
+      }
     ]
   },
   { path: '**', component: P404Component }

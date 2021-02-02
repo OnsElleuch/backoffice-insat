@@ -72,6 +72,60 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Services de Direction et Administratifs'
+  },
+  {
+    name: 'Gérer les membres',
+    url: '/direction',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter un membre',
+        url: '/direction/add-member',
+      },
+    ]
+  },
+  {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Laboratoires'
+  },
+  {
+    name: 'Gérer les laboratoires',
+    url: '/laboratoire',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une laboratoire',
+        url: '/laboratoire/add-lab',
+      },
+    ]
+  },
+  {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Enseignant'
+  },
+  {
+    name: 'Gérer les enseignants',
+    url: '/enseignant',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une enseignant',
+        url: '/enseignant/add-enseignant',
+      },
+    ]
+  },
+  {
     title: true,
     name: 'Extras',
   },
