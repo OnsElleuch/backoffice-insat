@@ -1,8 +1,10 @@
+declare var require: any;
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DirectionMember } from '../../../shared/models/direction-member.model';
 import { DirectionService } from '../../../shared/services/direction.service';
-import swal from 'sweetalert'
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = require('sweetalert');
 
 @Component({
   selector: 'app-add-member',

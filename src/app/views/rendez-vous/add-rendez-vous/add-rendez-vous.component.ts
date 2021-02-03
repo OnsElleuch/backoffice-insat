@@ -3,6 +3,9 @@ import {  Router } from '@angular/router';
 import { RendezVous } from '../../../shared/models/rendez-vous.model';
 import { RendezVousService } from '../../../shared/services/rendez-vous.service';
 import { SharedServiceService } from '../../../shared/services/shared-service.service';
+declare var require: any;
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = require('sweetalert');
 
 @Component({
   selector: 'app-add-rendez-vous',
@@ -28,6 +31,7 @@ export class AddRendezVousComponent implements OnInit {
       (data )=> {
         this.rendezVous.photoUrl = data['fileUrl'];
         this.rendezVousService.addRendezVous(this.rendezVous).subscribe((data)=> {
+          swal("Succès", "Rendez-Vous ajouté avec succès", "success");
           this.router.navigate(['/profile']);
         });
       }

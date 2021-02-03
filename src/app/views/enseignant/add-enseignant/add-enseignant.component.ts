@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Enseignant } from '../../../shared/models/enseignant.model';
 import { EnseignantService } from '../../../shared/services/enseignant.service';
-import swal from 'sweetalert';
 import { Router } from '@angular/router';
+declare var require: any;
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = require('sweetalert');
 @Component({
   selector: 'app-add-enseignant',
   templateUrl: './add-enseignant.component.html',
@@ -20,7 +22,7 @@ export class AddEnseignantComponent implements OnInit {
   }
   onSubmit(){
     this.enseignantService.addEnseignant(this.enseignant).subscribe((data)=> {
-      swal("Succès", "Enseignant ajouté avec succès", "success");
+      swal("Succès", "Enseignant ajouté avec succès", "success")
       this.router.navigateByUrl('/profile');
     });
   }
