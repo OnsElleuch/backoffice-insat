@@ -13,6 +13,8 @@ export class NewsService extends GenericService{
   }
 
   addNews(formulaire){
+    console.log(formulaire.value)
+
     return this.http.post(environment.baseUrl + "nouveautes/createNews", formulaire.value);
   }
 

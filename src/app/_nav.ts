@@ -126,6 +126,24 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Relations externes'
+  },
+  {
+    name: 'Partenariats',
+    url: '/partenariats',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une partenariat',
+        url: '/partenariats/add-partenariat',
+      },
+    ]
+  },
+  {
     title: true,
     name: 'Extras',
   },
@@ -156,6 +174,7 @@ export const navItems: INavData[] = [
       }
     ]
   },
+  
   // {
   //   name: 'Disabled',
   //   url: '/dashboard',
