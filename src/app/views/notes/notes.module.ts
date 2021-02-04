@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
-import { EventRoutingModule } from './event-routing.module';
-import { AddEventComponent } from './add-event/add-event.component';
+import { NotesRoutingModule } from './notes-routing.module';
+import { AddNotesComponent } from './add-notes/add-notes.component';
 
 
 @NgModule({
-  declarations: [AddEventComponent],
+  declarations: [AddNotesComponent],
   imports: [
     CommonModule,
-    EventRoutingModule,
+    NotesRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
   ]
 })
-export class EventModule { }
+export class NotesModule { }

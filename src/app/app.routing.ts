@@ -63,6 +63,10 @@ export const routes: Routes = [
         loadChildren: () => import('./views/calendrier/calendrier.module').then(m => m.CalendrierModule)
       },
       {
+        path: 'notes',
+        loadChildren: () => import('./views/notes/notes.module').then(m => m.NotesModule)
+      },
+      {
         path: 'theme',
         loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
       },
