@@ -25,7 +25,7 @@ export class AddMemberComponent implements OnInit {
   onSubmit(){
     this.directionService.addMember(this.membre).subscribe((data)=> {
       swal("Succès", "Membre ajouté avec succès", "success");
-      this.router.navigateByUrl('/profile');
+      this.router.navigateByUrl('/direction/members-list');
     });
   }
 

@@ -87,6 +87,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter un membre',
         url: '/direction/add-member',
       },
+      {
+        name: 'Voir les membres',
+        url: '/direction/members-list',
+      },
     ]
   },
   {
