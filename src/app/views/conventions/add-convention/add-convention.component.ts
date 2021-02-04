@@ -21,4 +21,8 @@ export class AddConventionComponent implements OnInit {
     formulaire.reset();
   }
 
+  onReset(formulaire: NgForm){
+    formulaire.reset();
+  }
+
 }

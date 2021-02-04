@@ -21,4 +21,7 @@ export class AddPartenariatComponent implements OnInit {
     formulaire.reset();
   }
 
+  onReset(formulaire: NgForm){
+    formulaire.reset();
+  }
 }
