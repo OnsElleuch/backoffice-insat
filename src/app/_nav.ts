@@ -144,6 +144,17 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    name: 'Conventions',
+    url: '/conventions',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une convention',
+        url: '/conventions/add-convention',
+      },
+    ]
+  },
+  {
     title: true,
     name: 'Extras',
   },
