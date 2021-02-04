@@ -24,6 +24,11 @@ export class AddNewsComponent implements OnInit {
 
   onSubmit(formulaire: NgForm){
     this.newsService.addNews(formulaire).subscribe(()=>{});
+    formulaire.reset();
+  }
+
+  onReset(formulaire: NgForm){
+    formulaire.reset();
   }
 
 }

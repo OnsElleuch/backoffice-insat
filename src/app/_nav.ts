@@ -22,7 +22,7 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Emplois de temps'
+    name: 'Etudiants'
   },
   {
     name: 'Gérer les emplois',
@@ -32,6 +32,20 @@ export const navItems: INavData[] = [
       {
         name: 'Ajouter un emploi',
         url: '/calendrier/add-calendrier',
+      },
+    ]
+  },
+  {
+    divider: true
+  },
+  {
+    name: 'Gérer les notes',
+    url: '/notes',
+    icon: 'icon-graph',
+    children: [
+      {
+        name: 'Faire une délibération',
+        url: '/notes/add-notes',
       },
     ]
   },
