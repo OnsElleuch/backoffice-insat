@@ -123,6 +123,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une laboratoire',
         url: '/laboratoire/add-lab',
       },
+      {
+        name: 'Voir les laboratoire',
+        url: '/laboratoire/lab-list',
+      },
     ]
   },
   {
