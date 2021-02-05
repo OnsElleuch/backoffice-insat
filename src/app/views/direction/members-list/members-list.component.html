@@ -14,6 +14,7 @@
                         <th>Code du poste</th>
                         <th>Service</th>
                         <th>Supprimer</th>
+                        <th>Modifier</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,7 @@
                         <td>{{member.poste_code}}</td>
                         <td>{{member.service}}</td>
                         <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(member.poste_code, i)" >Supprimer</button></td>
+                        <td><button class="btn btn-block btn-warning active" type="button" routerLink="/direction/add-member" [queryParams]="{code: member.poste_code }" >Modifier</button></td>
                     </tr>
                     
                 </tbody>
