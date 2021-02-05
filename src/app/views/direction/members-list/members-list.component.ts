@@ -25,7 +25,7 @@ export class MembersListComponent implements OnInit {
   }
 
   getAllMembers(page: number){
-    this.directionService.getAllMembers(page).subscribe(
+    this.directionService.getAllMembers(page,10).subscribe(
       (data)=> {
             this.totalPages = Array(data['meta']['totalPages']);
             this.members=data['items'];
@@ -37,7 +37,7 @@ export class MembersListComponent implements OnInit {
   supprimer(poste_code : number, index){
     this.directionService.deleteMember(poste_code).subscribe((data)=> {
       this.members.splice(index,1);
-      swal("Succès", "Membre supprimé avec succès", "success");
+      swal("Succès", "Enseignant supprimé avec succès", "success");
     });
   }
 

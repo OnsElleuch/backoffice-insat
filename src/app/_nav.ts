@@ -141,6 +141,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une enseignant',
         url: '/enseignant/add-enseignant',
       },
+      {
+        name: 'Voir les enseignants',
+        url: '/enseignant/enseignants-list',
+      },
     ]
   },
   {
