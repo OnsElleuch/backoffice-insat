@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <strong>Ajouter un emploi</strong>
+        <strong>Faire une délibration</strong>
       </div>
       <div class="card-body">
         <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm" enctype="multipart/form-data" class="form-horizontal" >
@@ -12,9 +12,12 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="type">Type</label>
+            <label class="col-md-3 col-form-label" for="type">Type de la délibération</label>
             <div class="col-md-9">
-                <input type="text" id="type" name="type" class="form-control" placeholder="Type" ngModel>
+                <select type="text" id="type" name="type" class="form-control" placeholder="Type" ngModel>
+                    <option value="classe">Délibération de classe</option>
+                    <option value="individuelle">Délibération individuelle</option>
+                </select>
             </div>
           </div>
           <div class="form-group row">
@@ -24,9 +27,15 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="pdfUrl">Fichier PDF de l'emploi</label>
+            <label class="col-md-3 col-form-label" for="pdfUrl">Fichier PDF de la délibération</label>
             <div class="col-md-9">
               <input type="file" id="pdfUrl" name="pdfUrl" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="details">Détails</label>
+            <div class="col-md-9">
+              <textarea id="details" name="details" rows="9" class="form-control" placeholder="Détails.." ngModel></textarea>
             </div>
           </div>
         </form>

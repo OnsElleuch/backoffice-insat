@@ -6,13 +6,14 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CalendrierService extends GenericService{
+export class NotesService extends GenericService{
 
-  constructor(private http: HttpClient) {
-    super()
+  constructor(private http: HttpClient) { 
+    super();
   }
 
-  addCalendrier(formulaire){
-    return this.http.post(environment.baseUrl + "calendrier", formulaire.value);
+  addNotes(formulaire){
+    return this.http.post(environment.baseUrl + "notes", formulaire.value);
   }
+
 }
