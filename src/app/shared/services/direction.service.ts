@@ -24,4 +24,7 @@ export class DirectionService extends GenericService{
   deleteMember(poste_code : number){
     return this.http.delete(environment.baseUrl+ "direction/deleteMemberById/" + poste_code);
   }
+  getMemberById(code: number) : Observable<DirectionMember> {
+    return this.http.get<DirectionMember>(environment.baseUrl + 'direction/getMemberById/' + code);
+  }
 }

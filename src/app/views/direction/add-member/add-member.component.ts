@@ -1,6 +1,6 @@
 declare var require: any;
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DirectionMember } from '../../../shared/models/direction-member.model';
 import { DirectionService } from '../../../shared/services/direction.service';
 import { SweetAlert } from 'sweetalert/typings/core';
@@ -17,8 +17,17 @@ export class AddMemberComponent implements OnInit {
 
   constructor(
     private directionService: DirectionService,
-    private router : Router
-    ) { }
+    private router : Router,
+    private route : ActivatedRoute
+    ) {
+      this.route.queryParams.subscribe(params => {
+        let code = params['code'];
+        if(code){
+          this.directionService.getMemberById(parseInt(code)).subscribe((data)=> {
+          this.membre=data;
+        })}
+    });
+     }
 
   ngOnInit(): void {
   }
