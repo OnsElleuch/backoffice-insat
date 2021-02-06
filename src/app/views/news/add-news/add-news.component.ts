@@ -27,7 +27,6 @@ export class AddNewsComponent implements OnInit {
         let code = params['code'];
         if(code){
           this.newsService.getNewsById(parseInt(code)).subscribe((data)=> {
-            console.log(data)
           this.newsItem=data;
         })}
     });
@@ -38,7 +37,6 @@ export class AddNewsComponent implements OnInit {
 
 
   onSubmit(){
-    console.log(this.newsItem)
     this.newsService.addNews(this.newsItem).subscribe((data)=> {
       swal("Succès", "Actualité ajoutée avec succès", "success");
       this.router.navigateByUrl('/news/list-news');
