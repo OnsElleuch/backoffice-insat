@@ -6,16 +6,15 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService extends GenericService{
+export class ConventionsService extends GenericService{
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     super();
   }
 
-  addNews(formulaire){
-    console.log(formulaire.value)
 
-    return this.http.post(environment.baseUrl + "nouveautes/createNews", formulaire.value);
+  addConvention(formulaire){
+    return this.http.post(environment.baseUrl + "convention", formulaire.value);
   }
 
 }
