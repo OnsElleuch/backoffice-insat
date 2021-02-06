@@ -18,7 +18,7 @@
                                         placeholder="{{user.name}}" class="form-control" name="name" #name ngModel >
                                 </div>
                             </div>
-                            <div class="col-md-6 pr-1" *ngIf="user.president">
+                            <div class="col-md-6 pr-1" *ngIf="user.privilege == 3">
                                 <div class="form-group">
                                     <label>Président </label>
                                     <input [(ngModel)]="user.president" [ngClass]="{'is-invalid': !user.president}" type="text"
@@ -72,8 +72,8 @@
     
                 <div class="card-body">
                     <div class="author">
-                        <a href="#">
-                            <img class="avatar border-gray" src="{{user.profile_picture}}" alt="...">
+                        <a href="javascript:void(0);">
+                            <img style="width: 100%;" src="{{baseFileUrl}}{{user.profile_picture}}" alt="...">
                             <h5 class="title"> {{user.name}}</h5>
                         </a>
                        
