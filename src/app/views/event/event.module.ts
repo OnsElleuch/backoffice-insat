@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { EventRoutingModule } from './event-routing.module';
 import { AddEventComponent } from './add-event/add-event.component';
+import { ListEventsComponent } from './list-events/list-events.component';
 
 
 @NgModule({
-  declarations: [AddEventComponent],
+  declarations: [AddEventComponent, ListEventsComponent],
   imports: [
     CommonModule,
     EventRoutingModule,

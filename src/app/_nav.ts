@@ -68,7 +68,11 @@ export const navItems: INavData[] = [
       {
         name:'Ajouter un évènement',
         url:'/event/add-event'
-      }
+      },
+      {
+        name: 'Voir les événements',
+        url: '/event/list-events',
+      },
     ]
   },
   {

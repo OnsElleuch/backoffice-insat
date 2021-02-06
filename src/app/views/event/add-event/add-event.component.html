@@ -4,29 +4,29 @@
         <strong>Ajouter un événement</strong>
       </div>
       <div class="card-body">
-        <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <form (ngSubmit)="onSubmit()" #formulaire="ngForm" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="title">Titre de l'évenement</label>
             <div class="col-md-9">
-              <input type="text" id="title" name="title" class="form-control" placeholder="Titre" ngModel>
+              <input [(ngModel)]="event.title" required type="text" id="title" name="title" class="form-control" placeholder="Titre" ngModel>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="description">Description</label>
             <div class="col-md-9">
-              <textarea id="description" name="description" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
+              <textarea [(ngModel)]="event.description" required id="description" name="description" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="date">Date</label>
             <div class="col-md-9">
-              <input type="date" id="date" name="date" class="form-control" ngModel>
+              <input [(ngModel)]="event.date" required type="date" id="date" name="date" class="form-control" ngModel>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="club">Club</label>
             <div class="col-md-9">
-                <select type="text" id="club" name="club" class="form-control" placeholder="club" ngModel>
+                <select [(ngModel)]="event.club" required type="text" id="club" name="club" class="form-control" placeholder="club" ngModel>
                     <option *ngFor="let clubName of clubsNames" value={{clubName}}>{{ clubName }}</option>
                 </select>
             </div>
@@ -34,19 +34,19 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="descriptionClub">Description du Club</label>
             <div class="col-md-9">
-              <textarea id="descriptionClub" name="descriptionClub" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
+              <textarea [(ngModel)]="event.descriptionClub" required id="descriptionClub" name="descriptionClub" rows="9" class="form-control" placeholder="Description de l'événement.." ngModel></textarea>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="photo_url">Photo de l'évenement</label>
             <div class="col-md-9">
-              <input type="file" id="photo_url" name="photo_url" ngModel>
+              <input [(ngModel)]="event.photo_url" required type="file" id="photo_url" name="photo_url" ngModel>
             </div>
           </div>
         </form>
       </div>
       <div class="card-footer">
-        <button (click)="onSubmit(formulaire)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button (click)="onSubmit()" type="submit" [disabled]="formulaire.invalid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
         <button (click)="onReset(formulaire)" type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
       </div>
     </div>
