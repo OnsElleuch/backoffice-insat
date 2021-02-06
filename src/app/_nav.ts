@@ -15,6 +15,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une actualité',
         url: '/news/add-news',
       },
+      {
+        name: 'Voir les actualités',
+        url: '/news/list-news',
+      },
     ]
   },
   {
