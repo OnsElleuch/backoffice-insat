@@ -24,11 +24,11 @@ export class NewsService extends GenericService{
   }
 
   getAllNews(page: number): Observable<News[]>{
-    return this.http.get<News[]>(environment.baseUrl +"nouveautes/getNews?page="+page+"&limit=2");
+    return this.http.get<News[]>(environment.baseUrl +"nouveautes/getNewsPaginate?page="+page+"&limit=2");
   }
 
-  deleteNews(poste_code : number){
-    return this.http.delete(environment.baseUrl+ "nouveautes/removeDelete/" + poste_code);
+  deleteNews(id : number){
+    return this.http.delete(environment.baseUrl+ "nouveautes/removeDelete/" + id);
   }
 
 
