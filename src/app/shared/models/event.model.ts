@@ -3,6 +3,6 @@ export class Event {
     description: string;
     date: string;
     club: string;
-    clubDescription: string;
+    descriptionClub: string;
     photo_url: string;
 }
