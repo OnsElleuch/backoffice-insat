@@ -47,6 +47,7 @@ import { ChartsModule } from 'ng2-charts';
 import { LoginService } from './shared/services/login.service';
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { ChangeInfoService } from './shared/services/profile.service';
 
 @NgModule({
   imports: [
@@ -83,7 +84,8 @@ import { AuthGuardService } from './auth/auth-guard.service';
     IconSetService,
     LoginService,
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    ChangeInfoService
   ],
   bootstrap: [ AppComponent ]
 })

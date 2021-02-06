@@ -8,21 +8,21 @@
                     <h5 class="title">Modifier votre profil</h5>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form #formulaireChange="ngForm" >
                         <div class="row">
 
                             <div class="col-md-6 pr-1">
                                 <div class="form-group">
                                     <label>Nom </label>
                                     <input [(ngModel)]="user.name" [ngClass]="{'is-invalid': !user.name}" type="text"
-                                        placeholder="{{user.name}}" class="form-control" name="nom">
+                                        placeholder="{{user.name}}" class="form-control" name="name" #name ngModel >
                                 </div>
                             </div>
                             <div class="col-md-6 pr-1" *ngIf="user.president">
                                 <div class="form-group">
                                     <label>Président </label>
                                     <input [(ngModel)]="user.president" [ngClass]="{'is-invalid': !user.president}" type="text"
-                                        placeholder="{{user.president}}" class="form-control" name="president">
+                                        placeholder="{{user.president}}" class="form-control" name="president" #president ngModel>
                                 </div>
                             </div>
 
@@ -31,8 +31,8 @@
                             <div class="col-md-6 pr-1">
                                 <div class="form-group">
                                     <label>E-mail</label>
-                                    <input  [(ngModel)]="user.mail" [ngClass]="{'is-invalid': !user.mail}" type="text"
-                                    placeholder="{{user.mail}}" class="form-control" name="mail">
+                                    <input  [(ngModel)]="user.email" [ngClass]="{'is-invalid': !user.email}" type="text"
+                                    placeholder="{{user.email}}" class="form-control" name="email" #email ngModel>
                                 </div>
                             </div>
                             <div class="col-md-6 pl-1">
@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea rows="4" cols="80" [(ngModel)]="user.description" 
-                                    placeholder="{{user.description}}" class="form-control" name="description"></textarea>
+                                    placeholder="{{user.description}}" class="form-control" name="description" #description ngModel></textarea>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                     </form>
                 </div>
                 <div class="card-footer"> 
-                    <button type="submit" class="btn btn-sm btn-primary" (click)="onSubmit()"><i class="fa fa-dot-circle-o"></i> Modifier</button>
+                    <button type="submit" class="btn btn-sm btn-primary" (click)="onSubmit(formulaireChange)"><i class="fa fa-dot-circle-o"></i> Modifier</button>
         
                 </div>
             </div>

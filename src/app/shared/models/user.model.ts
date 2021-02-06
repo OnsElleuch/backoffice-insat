@@ -1,5 +1,5 @@
 export class User {
-    id : number;
+    id : string;
     name : string;
     privilege : number; 
     /*  
@@ -8,7 +8,7 @@ export class User {
         club : 3
     */
     profile_picture : string;
-    mail: string;
+    email: string;
     password: string;
     description? : string;
     president? : string;
