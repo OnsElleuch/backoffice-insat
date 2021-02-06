@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Event } from '../../../shared/models/event.model';
 import { EventService } from '../../../shared/services/event.service';
 declare var require: any;
 import { SweetAlert } from 'sweetalert/typings/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+import { environment } from '../../../../environments/environment';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -17,6 +19,9 @@ export class ListEventsComponent implements OnInit {
   previous : string;
   next: string;
   current : number;
+  image: string;
+  @ViewChild('primaryModal') public primaryModal: ModalDirective;
+  name: string;
 
   constructor(private eventService: EventService) { }
 
@@ -39,6 +44,10 @@ export class ListEventsComponent implements OnInit {
       this.events.splice(index,1);
       swal("Succès", "Evenement supprimé avec succès", "success");
     });
+  }
+  showImage(url, name){
+    this.image= environment.baseUrlFiles+ url;
+    this.name = name;
   }
 
 

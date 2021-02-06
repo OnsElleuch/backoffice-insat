@@ -11,7 +11,7 @@
                             <th>Titre</th>
                             <th>Description</th>
                             <th>Date</th>
-                            <th>Url de la photo</th>
+                            <th>Photo</th>
                             <th>Supprimer</th>
                             <th>Modifier</th>
                         </tr>
@@ -22,7 +22,9 @@
                             <td>{{newsItem.title}}</td>
                             <td>{{newsItem.description}}</td>
                             <td>{{newsItem.date}}</td>
-                            <td>{{newsItem.photo_url}}</td>
+                            <td><button type="button" class="btn btn-block btn-primary mr-1" data-toggle="modal" (click)="primaryModal.show(); showImage(newsItem.photo_url, newsItem.title)">
+                                Voir la photo
+                              </button></td>
                             <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(newsItem.id, i)" >Supprimer</button></td>
                             <td><button class="btn btn-block btn-warning active" type="button" routerLink="/news/add-news" [queryParams]="{code: newsItem.id }" >Modifier</button></td>
                         </tr>
@@ -41,3 +43,21 @@
     </div>
     </div>
     </div>
+    <div bsModal #primaryModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-primary" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">{{name}}</h4>
+              <button type="button" class="close" (click)="primaryModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img [src]="image" style="height: 100%; width: 100%; object-fit: contain" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="primaryModal.hide()">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->

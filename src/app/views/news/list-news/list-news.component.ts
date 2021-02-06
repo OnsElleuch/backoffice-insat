@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { News } from '../../../shared/models/news.model';
 import { NewsService } from '../../../shared/services/news.service';
 declare var require: any;
 import { SweetAlert } from 'sweetalert/typings/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+import { environment } from '../../../../environments/environment';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -17,6 +19,9 @@ export class ListNewsComponent implements OnInit {
   previous : string;
   next: string;
   current : number;
+  image: string;
+  @ViewChild('primaryModal') public primaryModal: ModalDirective;
+  name: string;
 
   constructor(private newsService: NewsService) { }
 
@@ -41,5 +46,9 @@ export class ListNewsComponent implements OnInit {
     });
   }
 
+  showImage(url, name){
+    this.image= environment.baseUrlFiles+ url;
+    this.name = name;
+  }
 
 }

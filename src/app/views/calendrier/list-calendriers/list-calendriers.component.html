@@ -10,7 +10,7 @@
                             <th>ID</th>
                             <th>Nom</th>
                             <th>Type</th>
-                            <th>Url de la photo</th>
+                            <th>Emploi</th>
                             <th>Date</th>
                             <th>Détails</th>
                             <th>Supprimer</th>
@@ -22,7 +22,9 @@
                             <td>{{calendrier.id}}</td>
                             <td>{{calendrier.name}}</td>
                             <td>{{calendrier.type}}</td>
-                            <td>{{calendrier.pdfUrl}}</td>
+                            <td><button type="button" class="btn btn-block btn-primary mr-1" (click)="openPdf(calendrier.pdfUrl)">
+                                Voir l'emploi
+                              </button></td>
                             <td>{{calendrier.date}}</td>
                             <td>{{calendrier.details}}</td>
                             <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(calendrier.id, i)" >Supprimer</button></td>
