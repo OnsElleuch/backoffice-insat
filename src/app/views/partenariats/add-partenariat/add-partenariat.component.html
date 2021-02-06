@@ -4,54 +4,54 @@
       <strong>Ajouter une patenariat</strong>
     </div>
     <div class="card-body">
-      <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm" enctype="multipart/form-data" class="form-horizontal" >
+      <form (ngSubmit)="onSubmit()" #formulaire="ngForm" enctype="multipart/form-data" class="form-horizontal" >
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="universite">Université</label>
           <div class="col-md-9">
-            <input type="text" id="universite" name="universite" class="form-control" placeholder="Université.." ngModel>
+            <input [(ngModel)]="partenariat.universite" required type="text" id="universite" name="universite" class="form-control" placeholder="Université.." ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="societe">Société</label>
           <div class="col-md-9">
-            <input type="text" id="societe" name="societe" class="form-control" placeholder="Société.." ngModel>
+            <input [(ngModel)]="partenariat.societe" required type="text" id="societe" name="societe" class="form-control" placeholder="Société.." ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="objet">Objet</label>
           <div class="col-md-9">
-            <input type="text" id="objet" name="objet" class="form-control" placeholder="Objet.." ngModel>
+            <input [(ngModel)]="partenariat.objet" required type="text" id="objet" name="objet" class="form-control" placeholder="Objet.." ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="responsable">Responsable</label>
           <div class="col-md-9">
-            <input type="text" id="responsable" name="responsable" class="form-control" placeholder="Responsable.." ngModel>
+            <input [(ngModel)]="partenariat.responsable" required type="text" id="responsable" name="responsable" class="form-control" placeholder="Responsable.." ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="date">Date</label>
           <div class="col-md-9">
-            <input type="date" id="date" name="date" class="form-control" ngModel>
+            <input [(ngModel)]="partenariat.date" required type="date" id="date" name="date" class="form-control" ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="duree">Durée</label>
           <div class="col-md-9">
-            <input type="text" id="duree" name="duree" class="form-control" placeholder="Durée.." ngModel>
+            <input [(ngModel)]="partenariat.duree" required type="text" id="duree" name="duree" class="form-control" placeholder="Durée.." ngModel>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="observation">Observation</label>
           <div class="col-md-9">
-            <textarea id="observation" name="observation" rows="9" class="form-control" placeholder="Observation.." ngModel></textarea>
+            <textarea [(ngModel)]="partenariat.observation" required id="observation" name="observation" rows="9" class="form-control" placeholder="Observation.." ngModel></textarea>
           </div>
         </div>
         
       </form>
     </div>
     <div class="card-footer">
-      <button (click)="onSubmit(formulaire)" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+      <button (click)="onSubmit()" type="submit" class="btn btn-sm btn-primary" [disabled]="formulaire.invalid"><i class="fa fa-dot-circle-o"></i> Submit</button>
       <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
     </div>
   </div>
