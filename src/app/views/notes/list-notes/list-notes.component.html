@@ -11,7 +11,7 @@
                             <th>Nom</th>
                             <th>Type</th>
                             <th>Date</th>
-                            <th>Url de la photo</th>
+                            <th>Voir le PDF</th>
                             <th>Détails</th>
                             <th>Supprimer</th>
                             <th>Modifier</th>
@@ -23,7 +23,9 @@
                             <td>{{note.name}}</td>
                             <td>{{note.type}}</td>
                             <td>{{note.date}}</td>
-                            <td>{{note.pdfUrl}}</td>
+                            <td><button type="button" class="btn btn-block btn-primary mr-1" (click)="openPdf(note.pdfUrl)">
+                                Voir la note
+                              </button></td>
                             <td>{{note.details}}</td>
                             <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(note.id, i)" >Supprimer</button></td>
                             <td><button class="btn btn-block btn-warning active" type="button" routerLink="/notes/add-notes" [queryParams]="{code: note.id }" >Modifier</button></td>

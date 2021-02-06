@@ -3,6 +3,7 @@ import { Calendrier } from '../../../shared/models/calendrier.model';
 import { CalendrierService } from '../../../shared/services/calendrier.service';
 declare var require: any;
 import { SweetAlert } from 'sweetalert/typings/core';
+import { environment } from '../../../../environments/environment';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -37,8 +38,11 @@ export class ListCalendriersComponent implements OnInit {
   supprimer(poste_code : number, index){
     this.calendrierService.deleteCalendrier(poste_code).subscribe((data)=> {
       this.calendriers.splice(index,1);
-      swal("Succès", "Evenement supprimé avec succès", "success");
+      swal("Succès", "Emploi supprimé avec succès", "success");
     });
   }
 
+  openPdf(url: string) {
+    window.open(environment.baseUrlFiles+ url, '_blank');
+  }
 }

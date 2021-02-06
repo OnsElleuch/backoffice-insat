@@ -3,6 +3,7 @@ import { Note } from '../../../shared/models/note.model';
 import { NotesService } from '../../../shared/services/notes.service';
 declare var require: any;
 import { SweetAlert } from 'sweetalert/typings/core';
+import { environment } from '../../../../environments/environment';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -12,7 +13,7 @@ const swal: SweetAlert = require('sweetalert');
 })
 export class ListNotesComponent implements OnInit {
 
-  notes: Event[] = [];
+  notes: Note[] = [];
   totalPages : number[];
   previous : string;
   next: string;
@@ -39,6 +40,9 @@ export class ListNotesComponent implements OnInit {
       this.notes.splice(index,1);
       swal("Succès", "Evenement supprimé avec succès", "success");
     });
+  }
+  openPdf(url: string) {
+    window.open(environment.baseUrlFiles+ url, '_blank');
   }
 
 }
