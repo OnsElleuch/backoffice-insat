@@ -34,7 +34,7 @@ export class AddCalendrierComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(formulaire: NgForm){
+  onSubmit(){
     this.calendrierService.addCalendrier(this.calendrier).subscribe((data)=> {
       swal("Succès", "Emploi ajoutée avec succès", "success");
       this.router.navigateByUrl('/calendrier/list-calendriers');
