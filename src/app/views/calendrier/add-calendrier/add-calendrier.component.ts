@@ -19,10 +19,10 @@ export class AddCalendrierComponent implements OnInit {
   onSubmit(formulaire: NgForm){
     this.calendrierService.addCalendrier(formulaire).subscribe(()=>{});
     formulaire.reset();
+
   }
 
   onReset(formulaire: NgForm){
     formulaire.reset();
   }
-
 }

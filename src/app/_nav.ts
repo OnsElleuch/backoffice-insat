@@ -15,6 +15,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une actualité',
         url: '/news/add-news',
       },
+      {
+        name: 'Voir les actualités',
+        url: '/news/list-news',
+      },
     ]
   },
   {
@@ -156,6 +160,35 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Relations externes'
+  },
+  {
+    name: 'Partenariats',
+    url: '/partenariats',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une partenariat',
+        url: '/partenariats/add-partenariat',
+      },
+    ]
+  },
+  {
+    name: 'Conventions',
+    url: '/conventions',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Ajouter une convention',
+        url: '/conventions/add-convention',
+      },
+    ]
+  },
+  {
     title: true,
     name: 'Extras',
   },
@@ -186,6 +219,7 @@ export const navItems: INavData[] = [
       }
     ]
   },
+  
   // {
   //   name: 'Disabled',
   //   url: '/dashboard',
