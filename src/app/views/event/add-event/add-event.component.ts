@@ -8,6 +8,7 @@ import { Club } from "../../../shared/models/club.model";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Event } from '../../../shared/models/event.model';
 import { SweetAlert } from 'sweetalert/typings/core';
+import { SharedServiceService } from '../../../shared/services/shared-service.service';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -20,14 +21,15 @@ export class AddEventComponent implements OnInit {
   clubs: Club[] = []
   clubsNames: string[]  = []
   clubsDescription: string[] = []
-
+  private file: File;
   event = new Event();
 
   constructor(
     private clubService: ClubService,
     private eventService: EventService,
     private router : Router,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private sharedService: SharedServiceService
   ) {
     this.route.queryParams.subscribe(params => {
       let code = params['code'];
@@ -54,14 +56,34 @@ export class AddEventComponent implements OnInit {
   }
 
   onSubmit(){
-    this.eventService.addEvent(this.event).subscribe((data)=> {
-      swal("Succès", "Evenement ajouté avec succès", "success");
-      this.router.navigateByUrl('/event/list-events');
-    });
+    if(this.file){
+      let formData = new FormData();
+      formData.append('file', this.file, this.file.name);
+      this.sharedService.uploadFile(formData).subscribe(
+        (data )=> {
+          this.event.photo_url = data['fileUrl'];
+          this.eventService.addEvent(this.event).subscribe((data)=> {
+            swal("Succès", "Evenement ajouté avec succès", "success");
+            this.router.navigateByUrl('/event/list-events');
+          });
+        }
+      );}
+      else{
+        this.eventService.addEvent(this.event).subscribe((data)=> {
+          swal("Succès", "Evenement ajouté avec succès", "success");
+          this.router.navigateByUrl('/event/list-events');
+        });
+      }
+    
   }
 
   onReset(formulaire: NgForm){
     formulaire.reset();
+  }
+  async onFileChange(event) {
+
+    this.file = event.target.files[0];
+
   }
 
 }

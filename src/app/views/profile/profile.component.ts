@@ -10,6 +10,7 @@ import { User } from '../../shared/models/user.model';
 export class ProfileComponent implements OnInit {
   productForm: FormGroup;
   user = new User();
+  private file: File;
 
 
   constructor() { }
@@ -20,9 +21,8 @@ export class ProfileComponent implements OnInit {
   onSubmit(){
     console.log(this.user);
   }
-  uploadUserPhoto(event){
-    const file = event.target.files[0];
-    console.log(file);
+  async uploadUserPhoto(event){
+    this.file = event.target.files[0];
   }
-
+ 
 }

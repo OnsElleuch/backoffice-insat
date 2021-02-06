@@ -29,7 +29,7 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="pdfUrl">Fichier PDF de la délibération</label>
             <div class="col-md-9">
-              <input [(ngModel)]="note.pdfUrl" required type="file" id="pdfUrl" name="pdfUrl" ngModel>
+              <input (change)="onFileChange($event)" required type="file" id="pdfUrl" name="pdfUrl" ngModel>
             </div>
           </div>
           <div class="form-group row">

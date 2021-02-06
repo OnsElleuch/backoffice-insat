@@ -40,7 +40,7 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="photo_url">Photo de l'évenement</label>
             <div class="col-md-9">
-              <input [(ngModel)]="event.photo_url" required type="file" id="photo_url" name="photo_url" ngModel>
+              <input (change)="onFileChange($event)"  [(ngModel)]="event.photo_url" required type="file" id="photo_url" name="photo_url" ngModel>
             </div>
           </div>
         </form>
