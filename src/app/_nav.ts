@@ -51,6 +51,10 @@ export const navItems: INavData[] = [
         name: 'Faire une délibération',
         url: '/notes/add-notes',
       },
+      {
+        name: 'Voir les notes',
+        url: '/notes/list-notes',
+      },
     ]
   },
   {

@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { NotesRoutingModule } from './notes-routing.module';
 import { AddNotesComponent } from './add-notes/add-notes.component';
+import { ListNotesComponent } from './list-notes/list-notes.component';
 
 
 @NgModule({
-  declarations: [AddNotesComponent],
+  declarations: [AddNotesComponent, ListNotesComponent],
   imports: [
     CommonModule,
     NotesRoutingModule,
