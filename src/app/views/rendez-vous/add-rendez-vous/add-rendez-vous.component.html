@@ -15,7 +15,7 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="date">Date</label>
             <div class="col-md-9">
-              <input [(ngModel)]="rendezVous.date" type="date" id="date" name="date" class="form-control" ngModel>
+              <input [ngModel]="rendezVous.date | date:'yyyy-MM-dd' " (ngModelChange)="rendezVous.date=$event" type="date" id="date" name="date"  class="form-control" ngModel>
             </div>
           </div>
           <div class="form-group row">

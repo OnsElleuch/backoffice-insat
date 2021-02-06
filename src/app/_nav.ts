@@ -83,6 +83,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter un rendez-vous',
         url: '/rendez-vous/add-rendez-vous',
       },
+      {
+        name: 'Voir les rendez-vous',
+        url: '/rendez-vous/rendez-vous-list',
+      },
     ]
   },
   {
