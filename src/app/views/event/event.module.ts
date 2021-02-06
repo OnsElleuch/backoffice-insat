@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { EventRoutingModule } from './event-routing.module';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ListEventsComponent } from './list-events/list-events.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ListEventsComponent } from './list-events/list-events.component';
     CommonModule,
     EventRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ]
 })
 export class EventModule { }
