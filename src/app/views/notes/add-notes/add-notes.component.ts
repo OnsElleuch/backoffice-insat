@@ -5,6 +5,7 @@ import { NotesService } from "../../../shared/services/notes.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from '../../../shared/models/note.model';
 import { SweetAlert } from 'sweetalert/typings/core';
+import { SharedServiceService } from '../../../shared/services/shared-service.service';
 const swal: SweetAlert = require('sweetalert');
 
 @Component({
@@ -15,11 +16,13 @@ const swal: SweetAlert = require('sweetalert');
 export class AddNotesComponent implements OnInit {
 
   note = new Note();
+  file:File;
 
   constructor(
     private notesServices: NotesService,
     private router : Router,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private sharedService: SharedServiceService
   ) {
     this.route.queryParams.subscribe(params => {
       let code = params['code'];
@@ -35,14 +38,34 @@ export class AddNotesComponent implements OnInit {
   }
 
   onSubmit(){
-    this.notesServices.addNotes(this.note).subscribe((data)=> {
-      swal("Succès", "Actualité ajoutée avec succès", "success");
-      this.router.navigateByUrl('/notes/list-notes');
-    });
+    if(this.file){
+      let formData = new FormData();
+      formData.append('file', this.file, this.file.name);
+      this.sharedService.uploadFile(formData).subscribe(
+        (data )=> {
+          this.note.pdfUrl = data['fileUrl'];
+          this.notesServices.addNotes(this.note).subscribe((data)=> {
+            swal("Succès", "Actualité ajoutée avec succès", "success");
+            this.router.navigateByUrl('/notes/list-notes');
+          });
+        }
+      );}
+      else{
+        this.notesServices.addNotes(this.note).subscribe((data)=> {
+          swal("Succès", "Actualité ajoutée avec succès", "success");
+          this.router.navigateByUrl('/notes/list-notes');
+        });
+      }
+   
   }
 
   onReset(formulaire: NgForm){
     formulaire.reset();
   }
 
+  async onFileChange(event) {
+
+    this.file = event.target.files[0];
+
+  }
 }
