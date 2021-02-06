@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
 
   productForm: FormGroup;
   user = new User();
+  private file: File;
 
 
   ngOnInit(): void {
@@ -29,9 +30,8 @@ export class ProfileComponent implements OnInit {
       swal("Succès", "Profil mis ajours avec succès", "success");
       });
   }
-  uploadUserPhoto(event){
-    const file = event.target.files[0];
-    console.log(file);
+  async uploadUserPhoto(event){
+    this.file = event.target.files[0];
   }
-
+ 
 }
