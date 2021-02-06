@@ -37,6 +37,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter un emploi',
         url: '/calendrier/add-calendrier',
       },
+      {
+        name: 'Voir les emplois',
+        url: '/calendrier/list-calendriers',
+      },
     ]
   },
   {
