@@ -27,6 +27,7 @@ export class MembersListComponent implements OnInit {
   getAllMembers(page: number){
     this.directionService.getAllMembers(page).subscribe(
       (data)=> {
+        console.log(data)
             this.totalPages = Array(data['meta']['totalPages']);
             this.members=data['items'];
             this.previous= data['links']['previous'];
