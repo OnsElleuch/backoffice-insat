@@ -37,7 +37,7 @@ export class ListNewsComponent implements OnInit {
   supprimer(poste_code : number, index){
     this.newsService.deleteNews(poste_code).subscribe((data)=> {
       this.news.splice(index,1);
-      swal("Succès", "Membre supprimé avec succès", "success");
+      swal("Succès", "Actualité supprimée avec succès", "success");
     });
   }
 

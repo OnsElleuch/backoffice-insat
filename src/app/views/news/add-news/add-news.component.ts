@@ -40,7 +40,7 @@ export class AddNewsComponent implements OnInit {
   onSubmit(){
     console.log(this.newsItem)
     this.newsService.addNews(this.newsItem).subscribe((data)=> {
-      swal("Succès", "Membre ajouté avec succès", "success");
+      swal("Succès", "Actualité ajoutée avec succès", "success");
       this.router.navigateByUrl('/news/list-news');
     });
 
