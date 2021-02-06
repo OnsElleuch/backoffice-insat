@@ -18,8 +18,8 @@ export class DirectionService extends GenericService{
     return this.http.post(environment.baseUrl + "direction/addMember", membre);
   }
 
-  getAllMembers(page: number): Observable<DirectionMember[]>{
-    return this.http.get<DirectionMember[]>(environment.baseUrl +"direction/getAllMembers?page="+page+"&limit=2");
+  getAllMembers(page: number, limit : number): Observable<DirectionMember[]>{
+    return this.http.get<DirectionMember[]>(environment.baseUrl +"direction/getAllMembers?page="+page+"&limit=" + limit);
   }
   deleteMember(poste_code : number){
     return this.http.delete(environment.baseUrl+ "direction/deleteMemberById/" + poste_code);

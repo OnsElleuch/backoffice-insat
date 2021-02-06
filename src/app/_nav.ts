@@ -87,6 +87,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter un rendez-vous',
         url: '/rendez-vous/add-rendez-vous',
       },
+      {
+        name: 'Voir les rendez-vous',
+        url: '/rendez-vous/rendez-vous-list',
+      },
     ]
   },
   {
@@ -127,6 +131,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une laboratoire',
         url: '/laboratoire/add-lab',
       },
+      {
+        name: 'Voir les laboratoire',
+        url: '/laboratoire/lab-list',
+      },
     ]
   },
   {
@@ -144,6 +152,10 @@ export const navItems: INavData[] = [
       {
         name: 'Ajouter une enseignant',
         url: '/enseignant/add-enseignant',
+      },
+      {
+        name: 'Voir les enseignants',
+        url: '/enseignant/enseignants-list',
       },
     ]
   },

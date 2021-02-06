@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Lab } from '../../../shared/models/lab.model';
 import { LabService } from '../../../shared/services/lab.service';
 declare var require: any;
@@ -17,8 +17,17 @@ export class AddLabComponent implements OnInit {
 
   constructor(
     private labService: LabService,
-    private router: Router
-    ) { }
+    private router: Router,
+    private route: ActivatedRoute
+    ) {
+      this.route.queryParams.subscribe(params => {
+        let num = params['num'];
+        if(num){
+          this.labService.getLabById(num).subscribe((data)=> {
+          this.lab=data;
+        })}
+    });
+     }
 
   ngOnInit(): void {
   }
