@@ -25,7 +25,6 @@ export class AddCalendrierComponent implements OnInit {
       let code = params['code'];
       if(code){
         this.calendrierService.getCalendrierById(parseInt(code)).subscribe((data)=> {
-          console.log(data)
         this.calendrier=data;
       })}
   });

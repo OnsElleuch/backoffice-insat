@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { ConventionsRoutingModule } from './conventions-routing.module';
 import { AddConventionComponent } from './add-convention/add-convention.component';
+import { ListConventionsComponent } from './list-conventions/list-conventions.component';
 
 
 @NgModule({
-  declarations: [AddConventionComponent],
+  declarations: [AddConventionComponent, ListConventionsComponent],
   imports: [
     CommonModule,
     ConventionsRoutingModule,

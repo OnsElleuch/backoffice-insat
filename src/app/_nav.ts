@@ -187,6 +187,10 @@ export const navItems: INavData[] = [
         name: 'Ajouter une partenariat',
         url: '/partenariats/add-partenariat',
       },
+      {
+        name: 'Voir les partenariats',
+        url: '/partenariats/list-partenariats',
+      },
     ]
   },
   {
@@ -197,6 +201,10 @@ export const navItems: INavData[] = [
       {
         name: 'Ajouter une convention',
         url: '/conventions/add-convention',
+      },
+      {
+        name: 'Voir les conventions',
+        url: '/conventions/list-conventions',
       },
     ]
   },
