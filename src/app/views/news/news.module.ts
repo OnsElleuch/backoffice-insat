@@ -5,15 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { NewsRoutingModule } from './news-routing.module';
 import { AddNewsComponent } from './add-news/add-news.component';
+import { ListNewsComponent } from './list-news/list-news.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
-  declarations: [AddNewsComponent],
+  declarations: [AddNewsComponent, ListNewsComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NewsRoutingModule
+    NewsRoutingModule,
+    ModalModule.forRoot()
   ]
 })
 export class NewsModule { }

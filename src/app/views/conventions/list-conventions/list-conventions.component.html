@@ -1,0 +1,49 @@
+<div class="animated fadeIn">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header"><i class="fa fa-align-justify"></i> Conventions: </div>
+            <div class="card-body">
+                <table class="table table-bordered" style="table-layout: fixed; width:100%;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Etablissement Tunisien</th>
+                            <th>Etablissement Etranger</th>
+                            <th>Sujet</th>
+                            <th>Responsable</th>
+                            <th>Date</th>
+                            <th>Periode</th>
+                            <th>Observation</th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let convention of conventions; let i=index">
+                            <td>{{convention.id}}</td>
+                            <td>{{convention.etablissement}}</td>
+                            <td>{{convention.etranger}}</td>
+                            <td>{{convention.sujet}}</td>
+                            <td>{{convention.responsable}}</td>
+                            <td>{{convention.date}}</td>
+                            <td>{{convention.periode}}</td>
+                            <td>{{convention.observation}}</td>
+                            <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(convention.id, i)" >Supprimer</button></td>
+                            <td><button class="btn btn-block btn-warning active" type="button" routerLink="/conventions/add-convention" [queryParams]="{code: convention.id }" >Modifier</button></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li *ngIf="previous" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllConventions(current-1)">Precédent</a></li>
+                    <li *ngFor="let page of totalPages; let i = index" class="page-item" [ngClass]="{'active' : (i+1 == current)}">
+                        <a class="page-link" href="JavaScript:Void(0);" (click)="getAllConventions(i+1)">{{i+1}}</a>
+                    </li>
+                    <li *ngIf="next" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllConventions(current+1)">Suivant</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>

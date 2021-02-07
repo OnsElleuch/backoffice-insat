@@ -1,0 +1,45 @@
+<div class="animated fadeIn">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header"><i class="fa fa-align-justify"></i> Liste des enseignants </div>
+            <div class="card-body">
+                <table class="table table-bordered" style="table-layout: fixed; width:100%;">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>E-mail</th>
+                            <th>Grade</th>
+                            <th>Discipline</th>
+                            <th>Département</th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let enseignant of enseignants; let i=index">
+                            <td>{{enseignant.name}}</td>
+                            <td>{{enseignant.lastName}}</td>
+                            <td>{{enseignant.email}}</td>
+                            <td>{{enseignant.grade}}</td>
+                            <td>{{enseignant.discipline}}</td>
+                            <td>{{enseignant.department}}</td>
+                            <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(enseignant.email, i)" >Supprimer</button></td>
+                            <td><button class="btn btn-block btn-warning active" type="button" routerLink="/enseignant/add-enseignant" [queryParams]="{email: enseignant.email }" >Modifier</button></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li *ngIf="previous" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllEnseignants(current-1)">Precédent</a></li>
+                    <li *ngFor="let page of totalPages; let i = index" class="page-item" [ngClass]="{'active' : (i+1 == current)}">
+                        <a class="page-link" href="JavaScript:Void(0);" (click)="getAllEnseignants(i+1)">{{i+1}}</a>
+                    </li>
+                    <li *ngIf="next" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllEnseignants(current+1)">Suivant</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>

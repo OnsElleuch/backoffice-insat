@@ -1,0 +1,45 @@
+<div class="animated fadeIn">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card">
+        <div class="card-header"><i class="fa fa-align-justify"></i> Liste des membres administratifs et de direction </div>
+        <div class="card-body">
+            <table class="table table-bordered" style="table-layout: fixed; width:100%;">
+                <thead>
+                    <tr>
+                        <th>Titre du poste</th>
+                        <th>Responsable</th>
+                        <th>Poste du responsable</th>
+                        <th>Email du responsable</th>
+                        <th>Code du poste</th>
+                        <th>Service</th>
+                        <th>Supprimer</th>
+                        <th>Modifier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let member of members; let i=index">
+                        <td>{{member.title}}</td>
+                        <td>{{member.responsable}}</td>
+                        <td>{{member.poste}}</td>
+                        <td>{{member.email}}</td>
+                        <td>{{member.poste_code}}</td>
+                        <td>{{member.service}}</td>
+                        <td><button class="btn btn-block btn-danger active" type="button" (click)="supprimer(member.poste_code, i)" >Supprimer</button></td>
+                        <td><button class="btn btn-block btn-warning active" type="button" routerLink="/direction/add-member" [queryParams]="{code: member.poste_code }" >Modifier</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <li *ngIf="previous" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllMembers(current-1)">Precédent</a></li>
+                <li *ngFor="let page of totalPages; let i = index" class="page-item" [ngClass]="{'active' : (i+1 == current)}">
+                    <a class="page-link" href="JavaScript:Void(0);" (click)="getAllMembers(i+1)">{{i+1}}</a>
+                </li>
+                <li *ngIf="next" class="page-item"><a class="page-link" href="JavaScript:Void(0);" (click)="getAllMembers(current+1)">Suivant</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>

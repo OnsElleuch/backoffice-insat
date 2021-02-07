@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { CalendrierRoutingModule } from './calendrier-routing.module';
 import { AddCalendrierComponent } from './add-calendrier/add-calendrier.component';
+import { ListCalendriersComponent } from './list-calendriers/list-calendriers.component';
 
 
 @NgModule({
-  declarations: [AddCalendrierComponent],
+  declarations: [AddCalendrierComponent, ListCalendriersComponent],
   imports: [
     CommonModule,
     CalendrierRoutingModule,

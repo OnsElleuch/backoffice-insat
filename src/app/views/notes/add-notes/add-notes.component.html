@@ -1,0 +1,49 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Faire une délibration</strong>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #formulaire="ngForm" enctype="multipart/form-data" class="form-horizontal" >
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="name">Nom</label>
+            <div class="col-md-9">
+              <input [(ngModel)]="note.name" required type="text" id="name" name="name" class="form-control" placeholder="Nom" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="type">Type de la délibération</label>
+            <div class="col-md-9">
+                <select [(ngModel)]="note.type" required type="text" id="type" name="type" class="form-control" placeholder="Type" ngModel>
+                    <option value="classe">Délibération de classe</option>
+                    <option value="individuelle">Délibération individuelle</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="date">Date</label>
+            <div class="col-md-9">
+              <input [(ngModel)]="note.date" required type="date" id="date" name="date" class="form-control" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pdfUrl">Fichier PDF de la délibération</label>
+            <div class="col-md-9">
+              <input (change)="onFileChange($event)" required type="file" id="pdfUrl" name="pdfUrl" ngModel>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="details">Détails</label>
+            <div class="col-md-9">
+              <textarea [(ngModel)]="note.details" required id="details" name="details" rows="9" class="form-control" placeholder="Détails.." ngModel></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="onSubmit()" type="submit" class="btn btn-sm btn-primary" [disabled]="formulaire.invalid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button (click)="onReset(formulaire)" type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </div>
+   
+  </div>
