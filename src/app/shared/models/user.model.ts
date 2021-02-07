@@ -13,7 +13,7 @@ export class User {
     description? : string;
     president? : string;
 
-    constructor(id, name, privilege, email, password, profile_picture=null,description=null, president=null){
+    constructor(id=null, name=null, privilege=null, email=null, password=null, profile_picture=null,description=null, president=null){
         this.id=id;
         this.name=name;
         this.privilege= privilege;
