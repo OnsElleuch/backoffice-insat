@@ -55,7 +55,7 @@ if (user.privilege == 1) {
     {
       name: 'Gérer les notes',
       url: '/notes',
-      icon: 'icon-graph',
+      icon: 'icon-pie-chart',
       children: [
         {
           name: 'Faire une délibération',
@@ -99,7 +99,7 @@ if (user.privilege == 1) {
     {
       name: 'Gérer les Rendez-vous',
       url: '/rendez-vous',
-      icon: 'icon-bell',
+      icon: 'icon-pencil',
       children: [
         {
           name: 'Ajouter un rendez-vous',
@@ -121,7 +121,7 @@ if (user.privilege == 1) {
     {
       name: 'Gérer les membres',
       url: '/direction',
-      icon: 'icon-bell',
+      icon: 'icon-graph',
       children: [
         {
           name: 'Ajouter un membre',
@@ -143,7 +143,7 @@ if (user.privilege == 1) {
     {
       name: 'Gérer les laboratoires',
       url: '/laboratoire',
-      icon: 'icon-bell',
+      icon: 'icon-calculator',
       children: [
         {
           name: 'Ajouter une laboratoire',
@@ -165,7 +165,7 @@ if (user.privilege == 1) {
     {
       name: 'Gérer les enseignants',
       url: '/enseignant',
-      icon: 'icon-bell',
+      icon: 'icon-layers',
       children: [
         {
           name: 'Ajouter une enseignant',
@@ -187,7 +187,7 @@ if (user.privilege == 1) {
     {
       name: 'Partenariats',
       url: '/partenariats',
-      icon: 'icon-bell',
+      icon: 'icon-drop',
       children: [
         {
           name: 'Ajouter une partenariat',
@@ -202,7 +202,7 @@ if (user.privilege == 1) {
     {
       name: 'Conventions',
       url: '/conventions',
-      icon: 'icon-bell',
+      icon: 'icon-cursor',
       children: [
         {
           name: 'Ajouter une convention',
@@ -228,7 +228,7 @@ if (user.privilege == 2) {
     {
       name: 'Gérer les notes',
       url: '/notes',
-      icon: 'icon-graph',
+      icon: 'icon-pie-chart',
       children: [
         {
           name: 'Faire une délibération',
