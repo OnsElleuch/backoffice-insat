@@ -1,8 +1,9 @@
 import { INavData } from '@coreui/angular';
 import { User } from './shared/models/user.model';
-
-let user= new User(JSON.parse(localStorage.getItem('user')).id,JSON.parse(localStorage.getItem('user')).name, JSON.parse(localStorage.getItem('user')).privilege,JSON.parse(localStorage.getItem('user')).email,JSON.parse(localStorage.getItem('user')).password,JSON.parse(localStorage.getItem('user')).profile_picture,JSON.parse(localStorage.getItem('user')).description,JSON.parse(localStorage.getItem('user')).president);
-    
+let user= new User();
+if(JSON.parse(localStorage.getItem('user'))){
+user= new User(JSON.parse(localStorage.getItem('user')).id,JSON.parse(localStorage.getItem('user')).name, JSON.parse(localStorage.getItem('user')).privilege,JSON.parse(localStorage.getItem('user')).email,JSON.parse(localStorage.getItem('user')).password,JSON.parse(localStorage.getItem('user')).profile_picture,JSON.parse(localStorage.getItem('user')).description,JSON.parse(localStorage.getItem('user')).president);
+} 
 export let navItems: INavData[];
 if (user.privilege == 1) {
   navItems = [

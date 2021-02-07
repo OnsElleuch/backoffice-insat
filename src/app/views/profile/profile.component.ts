@@ -18,14 +18,14 @@ export class ProfileComponent implements OnInit {
   constructor( private changeInfoService: ChangeInfoService, private sharedService: SharedServiceService ) {}
 
   productForm: FormGroup;
-  user : User;
+  user : User= new User();
   private file: File;
   baseFileUrl= environment.baseUrlFiles;
 
 
   ngOnInit(): void {
     // add a getLoggedUser from service 
-    this.user= new User(JSON.parse(localStorage.getItem('user')).id,JSON.parse(localStorage.getItem('user')).name, JSON.parse(localStorage.getItem('user')).privilege,JSON.parse(localStorage.getItem('user')).email,JSON.parse(localStorage.getItem('user')).password,JSON.parse(localStorage.getItem('user')).profile_picture,JSON.parse(localStorage.getItem('user')).description,JSON.parse(localStorage.getItem('user')).president);
+   // this.user= new User(JSON.parse(localStorage.getItem('user')).id,JSON.parse(localStorage.getItem('user')).name, JSON.parse(localStorage.getItem('user')).privilege,JSON.parse(localStorage.getItem('user')).email,JSON.parse(localStorage.getItem('user')).password,JSON.parse(localStorage.getItem('user')).profile_picture,JSON.parse(localStorage.getItem('user')).description,JSON.parse(localStorage.getItem('user')).president);
     
   }
   onSubmit(formulaire: NgForm) {
