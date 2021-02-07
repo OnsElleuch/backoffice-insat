@@ -26,15 +26,21 @@ pipeline {
 		script: ' echo "${GIT_REPO_URL}/compare/${GIT_COMMIT}..${GIT_PREVIOUS_SUCCESSFUL_COMMIT}" '
 	).trim()} """
     }
+options {
+    skipDefaultCheckout true
+  }
     stages {
-
 stage('delete files from workspace') {
   steps {
     sh 'ls -l'
     sh 'sudo rm -rf ./*'
   }
 }
-		
+	stage('checkout scm') {
+  steps {
+    checkout scm
+  }
+}	
     stage('build') {
       steps {
         sh '''sudo npm install . 
